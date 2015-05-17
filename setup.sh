@@ -9,14 +9,21 @@ tar -xvf pip*.gz
 cd pip*
 sudo python setup.py install
 
+sudo apt-get install linux-image-generic
+
+sudo ldconfig /usr/local/cuda/lib64
+
 apt-get install nvidia-cuda-toolkit
 
-sudo wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_6.5-14_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1404_6.5-14_amd64.deb
+sudo apt-get update
+
+sudo wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.0-28_amd64.deb  
+
+sudo dpkg -i cuda-repo-ubuntu1404_7.0-28_amd64.deb  
+
 sudo apt-get update
 sudo apt-get install -y cuda # this takes a while
-echo -e "\nexport PATH=/usr/local/cuda-6.5/bin:$PATH\n\nexport LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64" >> .bashrc
-sudo reboot
+echo -e "\nexport PATH=/usr/local/cuda-7.0/bin:$PATH\n\nexport LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64" >> .bashrc
 
 # setup theano
 cat <<EOF >~/.theanorc
@@ -36,3 +43,6 @@ sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose
 
 sudo pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
+export PATH=$PATH:/usr/local/cuda/bin/
+
+python -i -c 'import theano'
