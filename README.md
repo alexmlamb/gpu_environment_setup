@@ -9,12 +9,19 @@ Instructions:
   ami-39296709
 
 2.  Connect to instance.  
+
   cd /mnt
+
   sudo mkdir home
+
   chmod -R 777 home
+
   cd home
+
   git clone https://github.com/alexmlamb/Timeseries.git
+
   git clone https://github.com/alexmlamb/gpu_environment_setup
+
 
 3.  Run setup.sh in gpu_environment_setup.  
 
