@@ -19,8 +19,12 @@ Instructions:
 3.  Run setup.sh in gpu_environment_setup.  
 
 4.  Get S3 permissions setup by writing credentials into a ~/.boto file:
+
   [Credentials]
+
   aws_access_key_id = 
+  
   aws_secret_access_key = 
+  
 
 5.  Run download_data.py in Timeseries/lib.  
