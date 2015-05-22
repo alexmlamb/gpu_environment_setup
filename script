@@ -1,0 +1,23 @@
+#!/bin/bash
+
+mkdir /mnt/home
+mkdir /mnt/data
+
+chmod -R 777 /mnt/home
+chmod -R 777 /mnt/data
+
+cd /mnt/home
+
+git clone https://github.com/alexmlamb/Timeseries.git
+
+python Timeseries/lib/download_data.py
+
+git clone https://github.com/alexmlamb/gpu_environment_setup.git
+
+pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+
+pip install -U boto
+
+cp gpu_environment_setup/vimrc ~/.vimrc
+
+cp gpu_environment_setup/theanorc ~/.theanorc

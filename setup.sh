@@ -1,9 +1,7 @@
+cred_file=boto.txt
+machine_name=ubuntu@52.10.100.57
+key_file=alexlamb.pem
 
-sudo env PATH=$PATH easy_install scikits.cuda
+scp -i ${key_file} ${cred_file} ${machine_name}:~/.boto
 
-sudo pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
-
-sudo pip install -U boto
-
-cp vimrc ~/.vimrc
-
+ssh -i ${key_file} -t ${machine_name} "sudo bash -s" <script
