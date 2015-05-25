@@ -14,7 +14,8 @@ python Timeseries/lib/download_data.py
 
 git clone https://github.com/alexmlamb/gpu_environment_setup.git
 
-pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+#0.7.0 is latest version confirmed to work.  
+pip install --upgrade --no-deps theano
 
 pip install -U boto
 
