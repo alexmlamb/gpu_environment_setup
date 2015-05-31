@@ -5,6 +5,7 @@ mkdir /mnt/data
 
 chmod -R 777 /mnt/home
 chmod -R 777 /mnt/data
+chmod -R 777 /mnt/logs
 
 cd /mnt/home
 
